@@ -24,8 +24,9 @@ public class Kereta {
 
         //Jika tiket lebih dari nol pesan tiket berhasil
         if (jumlahTiket > 0) {
-            daftarTiket[jumlahTiket - 1] = new Ticket();
-            daftarTiket[jumlahTiket - 1].setNamaPenumpang(new String[]{namaPenumpang});
+            int index = daftarTiket.length - jumlahTiket;
+            daftarTiket[index] = new Ticket();
+            daftarTiket[index].setNamaPenumpang(new String[]{namaPenumpang});
             jumlahTiket--;
             System.out.println("=================================================");
             System.out.println("Tiket berhasil dipesan");
@@ -45,10 +46,11 @@ public class Kereta {
     // Menambahkan tiket untuk KAJJ (Memakai overloaded method)
     public void tambahTiket(String namaPenumpang, String asal, String tujuan) {
         if (jumlahTiket > 0) {
-            daftarTiket[jumlahTiket - 1] = new Ticket();
-            daftarTiket[jumlahTiket - 1].setNamaPenumpang(new String[]{namaPenumpang});
-            daftarTiket[jumlahTiket - 1].setAsal(new String[]{asal});
-            daftarTiket[jumlahTiket - 1].setTujuan(new String[]{tujuan});
+            int index = daftarTiket.length - jumlahTiket;
+            daftarTiket[index] = new Ticket();
+            daftarTiket[index].setNamaPenumpang(new String[]{namaPenumpang});
+            daftarTiket[index].setAsal(new String[]{asal});
+            daftarTiket[index].setTujuan(new String[]{tujuan});
             jumlahTiket--;
             System.out.println("=================================================");
             System.out.print("Tiket berhasil dipesan");
